@@ -86,12 +86,6 @@ function drawColors() {
     }
 }
 
-function draw() {
-    switchToDark();
-    drawColors();
-    drawTones();
-}
-
 function switchToDark() {
     var navLinkDark = document.getElementById('navLinkDark');
     var navLinkLight = document.getElementById('navLinkLight');
@@ -112,4 +106,10 @@ function switchToLight() {
     document.body.style.color = '#7b7e7d';
     // document.body.hr.style.borderColor = whiteHighlight(1).hex();
     console.log(document.body.style.background);
+}
+
+function draw() {
+    switchToDark();
+    drawColors();
+    drawTones();
 }
