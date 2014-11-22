@@ -1,3 +1,5 @@
+'use strict';
+
 var L = {
     'xx_low': 15,
     'low': 25,
