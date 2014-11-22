@@ -1,20 +1,20 @@
-L = {
+var L = {
     'xx-low': 15,
     'low': 25,
     'medium': 50,
     'high': 75,
     'xx-high': 95
-}
+};
 
-c = {
+var c = {
     'x-low': 15,
     'low': 33,
     'medium': 50,
     'high': 67,
     'x-high': 85,
-}
+};
 
-h = {
+var h = {
     'red':     276 + 120 - 15, // triad
     'orange':  51,             // locked BASE
     'yellow':  276 - 180,      // locked complementary
@@ -23,7 +23,7 @@ h = {
     'blue':    276,            // locked BASE
     'violet':  51 + 270 - 15,       //
     'magenta': 276 + 60 - 15,  // complement triad
-}
+};
 
 var black = new chroma.lch(15, 15, h['blue']);
 var white = new chroma.lch(95, 15, h['yellow']);
