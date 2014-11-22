@@ -1,3 +1,5 @@
+'use strict';
+
 var chroma = require('chroma-js');
 var cdiff = require('color-diff');
 var palette = [];
@@ -47,7 +49,7 @@ h = {
     'green':   276 - 120 - 15, // triad
     'cyan':    276 - 60 - 15,  // complement triad
     'blue':    276,            // locked BASE
-    'violet':  51 + 270 - 15,       // 
+    'violet':  51 + 270 - 15,       //
     'magenta': 276 + 60 - 15,  // complement triad
 }
 
