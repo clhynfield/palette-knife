@@ -21,7 +21,7 @@ h = {
     'green':   276 - 120 - 15, // triad
     'cyan':    276 - 60 - 15,  // complement triad
     'blue':    276,            // locked BASE
-    'violet':  51 + 270 - 15,       // 
+    'violet':  51 + 270 - 15,       //
     'magenta': 276 + 60 - 15,  // complement triad
 }
 
@@ -97,7 +97,7 @@ function switchToDark() {
     navLinkLight.classList.remove('active');
     document.body.style.background = black.hex();
     document.body.style.color = '#979891';
-    document.body.hr.style.borderColor = blackHighlight(1).hex();
+    // document.body.hr.style.borderColor = blackHighlight(1).hex();
     console.log(document.body.style.background);
 }
 
@@ -108,6 +108,6 @@ function switchToLight() {
     navLinkLight.classList.add('active');
     document.body.style.background = white.hex();
     document.body.style.color = '#7b7e7d';
-    document.body.hr.style.borderColor = whiteHighlight(1).hex();
+    // document.body.hr.style.borderColor = whiteHighlight(1).hex();
     console.log(document.body.style.background);
 }
