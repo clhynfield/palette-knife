@@ -1,5 +1,7 @@
 {
   "name": "palette-knife",
+  "version": "0.1.0",
+  "author": "@clayton",
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
     "grunt": "^0.4.5",
