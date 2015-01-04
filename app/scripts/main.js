@@ -1,11 +1,11 @@
 'use strict';
 
 var L = {
-    'xx_low': 15,
+    'xxLow': 15,
     'low': 25,
     'medium': 50,
     'high': 75,
-    'xx_high': 95
+    'xxHigh': 95
 };
 
 var c = {
@@ -37,9 +37,9 @@ console.log('tones of grey', greyTones);
 console.log('light contrast', greyscale((50 - 15) / (95 - 15)).hex(), chroma.contrast(greyscale((50 - 15) / (95 - 15)), white));
 console.log('dark contrast', greyscale((60 - 15) / (95 - 15)).hex(), chroma.contrast(greyscale((60 - 15) / (95 - 15)), black));
 
-var whiteHighlight = chroma.scale([ white, chroma.lch(L.xx_low, c.high, h.orange) ]).correctLightness(true);
+var whiteHighlight = chroma.scale([ white, chroma.lch(L.xxLow, c.high, h.orange) ]).correctLightness(true);
 console.log('hlwhite', whiteHighlight(1).hex());
-var blackHighlight = chroma.scale([ black, chroma.lch(L.xx_high, c.high, h.orange) ]).correctLightness(true);
+var blackHighlight = chroma.scale([ black, chroma.lch(L.xxHigh, c.high, h.orange) ]).correctLightness(true);
 console.log('hlblack', blackHighlight(1).hex());
 
 function drawTones() {
