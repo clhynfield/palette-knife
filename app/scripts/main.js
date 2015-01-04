@@ -29,7 +29,6 @@ var h = {
 
 var black = new chroma.lch(15, 15, h.blue);
 var white = new chroma.lch(95, 15, h.yellow);
-var orange = new chroma.lch(L.medium, c.high, h.orange);
 var greyscale = chroma.scale([black, white]).correctLightness(true);
 var greyTones = greyscale.domain([ 0.15, 0.95], 17).colors();//[0, 1, 6, 7, 9 , 10, 15, 16];
 
