@@ -86,10 +86,10 @@ function drawColors() {
 }
 
 function switchToDark() {
-    var navLinkDark = document.getElementById('navLinkDark');
-    var navLinkLight = document.getElementById('navLinkLight');
-    navLinkDark.classList.add('active');
-    navLinkLight.classList.remove('active');
+    var navItemDark = document.getElementById('navItemDark');
+    var navItemLight = document.getElementById('navItemLight');
+    navItemDark.classList.add('active');
+    navItemLight.classList.remove('active');
     document.body.style.background = black.hex();
     document.body.style.color = '#979891';
     // document.body.hr.style.borderColor = blackHighlight(1).hex();
@@ -97,10 +97,10 @@ function switchToDark() {
 }
 
 function switchToLight() {
-    var navLinkDark = document.getElementById('navLinkDark');
-    var navLinkLight = document.getElementById('navLinkLight');
-    navLinkDark.classList.remove('active');
-    navLinkLight.classList.add('active');
+    var navItemDark = document.getElementById('navItemDark');
+    var navItemLight = document.getElementById('navItemLight');
+    navItemDark.classList.remove('active');
+    navItemLight.classList.add('active');
     document.body.style.background = white.hex();
     document.body.style.color = '#7b7e7d';
     // document.body.hr.style.borderColor = whiteHighlight(1).hex();
@@ -112,3 +112,12 @@ function draw() {
     drawColors();
     drawTones();
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  draw();
+  var navLinkDark = document.getElementById('navLinkDark');
+  var navLinkLight = document.getElementById('navLinkLight');
+
+  navLinkDark.addEventListener('click', switchToDark, false);
+  navLinkLight.addEventListener('click', switchToLight, false);
+});
