@@ -6,6 +6,10 @@ h1, h2, h3 {
     font-family: 'Roboto Slab', serif;
 }
 
+.lead {
+    font-weight: 300;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
