@@ -7,6 +7,10 @@ h1, h2, h3 {
     color: #a4684c;
 }
 
+.jumbotron h1 {
+    color: #a4684c;
+}
+
 .lead {
     font-weight: 300;
 }
