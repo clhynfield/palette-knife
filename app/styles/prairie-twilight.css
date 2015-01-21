@@ -1,0 +1,11 @@
+body {
+    font-family: 'Roboto', serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto Slab', serif;
+}
+
+.lead {
+    font-weight: 300;
+}
