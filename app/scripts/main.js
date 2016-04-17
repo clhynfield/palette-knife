@@ -81,8 +81,9 @@ function drawColors() {
                 h[color]
             ).hex();
             ctx.fillRect((64 * index) + 16, 16, 48, 48);
-            console.log(color, chroma.lch(L.medium, c.low, h[color]).hex());
-            console.log('br' + color, chroma.lch(L.medium, c.medium, h[color]).hex());
+            var cell = document.getElementById("cell-" + color);
+            cell.innterHTML += ": <bar />\n" + chroma.lch(L.medium, c.low, h[color]).hex();
+            cell.style.background = chroma.lch(L.medium, c.low, h[color]).hex();
         });
     }
 }
