@@ -59,7 +59,7 @@ function drawTones() {
             ctx.fillStyle = greyscale((tone - 15) / (95 - 15)).hex();
             ctx.strokeRect((64 * index) + 16, 16, 48, 48);
             ctx.fillRect((64 * index) + 16, 16, 48, 48);
-            var cell = document.getElementById("cellTone" + tone);
+            var cell = document.getElementById("cell-tone" + tone);
             cell.innerHTML += ": <br />\n" + greyscale((tone - 15) / (95 - 15)).hex();
             cell.style.background = greyscale((tone - 15) / (95 - 15)).hex();
         });
