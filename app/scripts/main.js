@@ -43,49 +43,26 @@ var blackHighlight = chroma.scale([ black, chroma.lch(L.xxHigh, c.high, h.orange
 console.log('hlblack', blackHighlight(1).hex());
 
 function drawTones() {
-    var canvas = document.getElementById('tones');
-
-    if (canvas.getContext) {
-        var ctx = canvas.getContext('2d');
-
         var tones = [ 15, 20, 45, 50, 60, 65, 90, 95 ];
 
         tones.map(function (tone, index) {
             if (tone > 50) {
-                ctx.strokeStyle = whiteHighlight(1).hex();
+                var strokeStyle = whiteHighlight(1).hex();
             } else {
-                ctx.strokeStyle = blackHighlight(1).hex();
+                var strokeStyle = blackHighlight(1).hex();
             }
-            ctx.fillStyle = greyscale((tone - 15) / (95 - 15)).hex();
-            ctx.strokeRect((64 * index) + 16, 16, 48, 48);
-            ctx.fillRect((64 * index) + 16, 16, 48, 48);
             var cell = document.getElementById("cell-tone" + tone);
             cell.innerHTML += ": <br />\n" + greyscale((tone - 15) / (95 - 15)).hex();
             cell.style.background = greyscale((tone - 15) / (95 - 15)).hex();
         });
-    }
 }
 
 function drawColors() {
-    var canvas = document.getElementById('colors');
-
-    if (canvas.getContext) {
-        var ctx = canvas.getContext('2d');
-
         Object.keys(h).map(function (color, index) {
-            ctx.strokeStyle = black.hex();
-            ctx.strokeRect((64 * index) + 16, 16, 48, 48);
-            ctx.fillStyle = chroma.lch(
-                L.medium,
-                c.low,
-                h[color]
-            ).hex();
-            ctx.fillRect((64 * index) + 16, 16, 48, 48);
             var cell = document.getElementById("cell-" + color);
             cell.innterHTML += ": <bar />\n" + chroma.lch(L.medium, c.low, h[color]).hex();
             cell.style.background = chroma.lch(L.medium, c.low, h[color]).hex();
         });
-    }
 }
 
 function switchToDark() {
