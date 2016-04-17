@@ -60,7 +60,7 @@ function drawTones() {
 function drawColors() {
         Object.keys(h).map(function (color, index) {
             var cell = document.getElementById("cell-" + color);
-            cell.innterHTML += ": <bar />\n" + chroma.lch(L.medium, c.low, h[color]).hex();
+            cell.innerHTML += ": <bar />\n" + chroma.lch(L.medium, c.low, h[color]).hex();
             cell.style.background = chroma.lch(L.medium, c.low, h[color]).hex();
         });
 }
