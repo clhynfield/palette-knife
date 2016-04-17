@@ -11,6 +11,12 @@ body {
   padding-bottom: 20px;
 }
 
+table.swatches tr td {
+  margin: 0.5em;
+  padding: 1em;
+  border: 1px;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
