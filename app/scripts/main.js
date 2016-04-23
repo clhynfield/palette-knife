@@ -30,7 +30,6 @@ var h = {
 var black = new chroma.lch(15, 15, h.blue);
 var white = new chroma.lch(95, 15, h.yellow);
 var greyscale = chroma.scale([black, white]).correctLightness(true);
-var greyTones = greyscale.domain([ 0.15, 0.95], 17).colors();//[0, 1, 6, 7, 9 , 10, 15, 16];
 
 var whiteHighlight = chroma.scale([ white, chroma.lch(L.xxLow, c.high, h.orange) ]).correctLightness(true);
 var blackHighlight = chroma.scale([ black, chroma.lch(L.xxHigh, c.high, h.orange) ]).correctLightness(true);
