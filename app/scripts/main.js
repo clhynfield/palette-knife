@@ -30,9 +30,6 @@ var h = {
 var black = new chroma.lch(15, 15, h.blue);
 var white = new chroma.lch(95, 15, h.yellow);
 var greyscale = chroma.scale([black, white]).correctLightness(true);
-var greyTones = greyscale.domain([ 0.15, 0.95], 17).colors();//[0, 1, 6, 7, 9 , 10, 15, 16];
-
-console.log('tones of grey', greyTones);
 
 console.log('light contrast', greyscale((50 - 15) / (95 - 15)).hex(), chroma.contrast(greyscale((50 - 15) / (95 - 15)), white));
 console.log('dark contrast', greyscale((60 - 15) / (95 - 15)).hex(), chroma.contrast(greyscale((60 - 15) / (95 - 15)), black));
