@@ -44,16 +44,30 @@ function drawTones() {
                 var strokeStyle = blackHighlight(1).hex();
             }
             var cell = document.getElementById("cell-tone" + tone);
-            cell.innerHTML += ": <br />\n" + greyscale((tone - 15) / (95 - 15)).hex();
+            cell.innerHTML += ": <br />\n" + rgbToString(greyscale((tone - 15) / (95 - 15)).rgb());
             cell.style.background = greyscale((tone - 15) / (95 - 15)).hex();
+            if ( tone < 30 ) {
+                cell.style.color = white;
+            } else {
+                cell.style.color = black;
+            }
         });
+}
+
+function toInt(num) {
+    return parseFloat((num).toFixed(0));
+}
+
+function rgbToString(rgb) {
+    return rgb.map(toInt);
 }
 
 function drawColors() {
         Object.keys(h).map(function (color, index) {
             var cell = document.getElementById("cell-" + color);
-            cell.innerHTML += ": <br />\n" + chroma.lch(L.medium, c.low, h[color]).hex();
+            cell.innerHTML += ": <br />\n" + chroma.lch(L.medium, c.low, h[color]).rgb();
             cell.style.background = chroma.lch(L.medium, c.low, h[color]).hex();
+            cell.style.color = black;
         });
 }
 
