@@ -17,6 +17,6 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
-    - grunt:
-        tasks: test
+    - gulp:
+        tasks: build
  
