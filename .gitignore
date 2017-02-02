@@ -2,5 +2,4 @@ node_modules
 dist
 .tmp
 bower_components
-.DS_Store
-npm-debug.log
+test/bower_components
