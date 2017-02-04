@@ -12,11 +12,4 @@ build:
     - script:
         code: export NODE_ENV='testing'
     - npm-install
-    - script:
-        name: echo nodejs information
-        code: |
-          echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"
-    - hgen/gulp:
-        tasks: test
  
