@@ -12,4 +12,4 @@ build:
         code: export NODE_ENV='testing'
     - npm-install
     - hgen/gulp:
-        tasks: build
+        tasks: test
