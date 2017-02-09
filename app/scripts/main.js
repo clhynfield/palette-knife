@@ -9,7 +9,7 @@
     'xxHigh': 95
   };
 
-  const c = {
+  var c = {
     'x_low': 15,
     'low': 33,
     'medium': 50,
