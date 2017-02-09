@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var L = {
+  const L = {
     'xxLow': 15,
     'low': 25,
     'medium': 50,
@@ -9,7 +9,7 @@
     'xxHigh': 95
   };
 
-  var c = {
+  const c = {
     'x_low': 15,
     'low': 33,
     'medium': 50,
@@ -17,7 +17,7 @@
     'x_high': 85,
   };
 
-  var h = {
+  const h = {
     'red':     276 + 120 - 15, // triad
     'orange':  51,             // locked BASE
     'yellow':  276 - 180,      // locked complementary
@@ -37,12 +37,13 @@
 
   function drawTones() {
     var tones = [ 15, 20, 45, 50, 60, 65, 90, 95 ];
+    var strokeStyle;
 
     tones.map(function (tone, index) {
       if (tone > 50) {
-        var strokeStyle = whiteHighlight(1).hex();
+        strokeStyle = whiteHighlight(1).hex();
       } else {
-        var strokeStyle = blackHighlight(1).hex();
+        strokeStyle = blackHighlight(1).hex();
       }
       var cell = document.getElementById("cell-tone" + tone);
       cell.innerHTML += ": <br />\n" + chromaToString(greyscale((tone - 15) / (95 - 15)));
