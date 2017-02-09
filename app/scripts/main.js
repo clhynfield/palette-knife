@@ -61,10 +61,10 @@
   }
 
   function chromaToString(color) {
-    return ""
-      + Math.round(color.hsv()[0])
-      + ", " + Math.round(color.hsv()[1]*100)
-      + ", " + Math.round(color.hsv()[2]*100);
+    return "" +
+      Math.round(color.hsv()[0]) +
+      ", " + Math.round(color.hsv()[1]*100) +
+      ", " + Math.round(color.hsv()[2]*100);
   }
 
   function drawColors() {
