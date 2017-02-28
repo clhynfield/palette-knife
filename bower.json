@@ -2,7 +2,18 @@
   "name": "palette-knife",
   "private": true,
   "dependencies": {
-    "chroma-js": "^1.1.1"
+    "chroma-js": "^1.1.1",
+    "bootstrap": "^3.3.7"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js",
+        "dist/fonts/*"
+      ]
+    }
   },
   "devDependencies": {
     "chai": "^3.5.0",
