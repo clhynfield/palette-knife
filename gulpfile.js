@@ -5,6 +5,7 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
+const mocha = require('gulp-mocha');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -142,6 +143,11 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
+gulp.task('test', () => {
+  gulp.src('test/spec/**/*.js')
+    .pipe(mocha());
+});
+
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
@@ -149,6 +155,6 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', () => {
   return new Promise(resolve => {
     dev = false;
-    runSequence(['clean', 'wiredep'], 'build', resolve);
+    runSequence(['clean', 'wiredep', 'test'], 'build', resolve);
   });
 });
