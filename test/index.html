@@ -8,15 +8,15 @@
 </head>
 <body>
   <div id="mocha"></div>
+  <!-- bower:js -->
   <script src="../bower_components/mocha/mocha.js"></script>
-  <script>mocha.setup('bdd');</script>
   <script src="../bower_components/chai/chai.js"></script>
+  <!-- endbower -->
+  <!-- include source files here... -->
+  <script>mocha.setup('bdd');</script>
   <script>
     var should = chai.should();
   </script>
-  <!-- bower:js -->
-  <!-- endbower -->
-  <!-- include source files here... -->
   <!-- include spec files here... -->
   <script src="spec/test.js"></script>
   <script>
