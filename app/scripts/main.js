@@ -46,7 +46,7 @@
         strokeStyle = blackHighlight(1).hex();
       }
       var cell = document.getElementById('cell-tone' + tone);
-      cell.innerHTML += ': <br />\n' + chromaToString(greyscale((tone - 15) / (95 - 15)));
+      cell.innerHTML += ': ' + chromaToString(greyscale((tone - 15) / (95 - 15)));
       cell.style.background = greyscale((tone - 15) / (95 - 15)).hex();
       if ( tone < 30 ) {
         cell.style.color = white;
@@ -70,7 +70,7 @@
   function drawColors() {
     Object.keys(h).map(function (color, index) {
       var cell = document.getElementById('cell-' + color);
-      cell.innerHTML += ': <br />\n' + chromaToString(chroma.lch(L.medium, c.low, h[color]));
+      cell.innerHTML += ': ' + chromaToString(chroma.lch(L.medium, c.low, h[color]));
       cell.style.background = chroma.lch(L.medium, c.low, h[color]).hex();
       cell.style.color = black;
     });
@@ -96,8 +96,6 @@
 
   function draw() {
       switchToDark();
-      drawColors();
-      drawTones();
   }
 
   document.addEventListener('DOMContentLoaded', function() {

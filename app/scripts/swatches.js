@@ -1,5 +1,5 @@
 var newTone = function (name, hue) {
-  var color = d3.hcl(hue, 75, 75);
+  var color = d3.hcl(hue, 67, 75);
   var tone = {
     'name': name,
     'color': color,
@@ -19,33 +19,46 @@ tones = [
   newTone('magenta', 276 + 60 - 15),  // complement triad
 ];
 
-var swatchContainer = d3.select("body").append("svg")
-  .attr("width", 200)
-  .attr("height", 200);
+
 
 var r = 50;
 var theta = 2 * Math.PI / tones.length;
-console.log(((2 * Math.PI)/theta).toString());
 function cx(d, i) {
-     console.log(i.toString());
-     return(r * Math.cos(i * theta) + 100);
+  return(r * Math.cos(i * theta) + 100);
 }
 function cy(d, i) {
-   return(r * Math.sin(i * theta) + 100);
+  return(r * Math.sin(i * theta) + 100);
 }
 
+var swatchContainer = d3.select("main").append("svg")
+  .attr("width", 200)
+  .attr("height", 200);
+
 var toneSwatches = swatchContainer.selectAll("circle")
-  .data(tones)
-  .text(function (d) { return d; })
-              .attr('cx', function(d, i) {return cx(d, i*theta);})
-  .attr('cy', function(d, i) {return cy(d, i*theta);})
-  .attr('r', 12);
+  .data(tones);
 
 toneSwatches.enter().append("circle")
-  .text(function(d) { return d; })
   .attr('cx', function(d, i) {return cx(d, i);})
   .attr('cy', function(d, i) {return cy(d, i);})
   .style('fill', function(d, i) { return d.rgb; })
   .attr('r', 12);
 
 toneSwatches.exit().remove();
+
+
+
+
+function colorHeader(color) {
+  return color.name;
+}
+
+var toneTable = d3.select("main").append("table");
+
+var toneTableRows = toneTable.selectAll("tr")
+  .data(tones);
+
+toneTableRows.enter().append("tr")
+  .append("th")
+  .text(function(d) { return colorHeader(d); });
+
+toneTableRows.exit().remove();
