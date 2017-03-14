@@ -1,11 +1,15 @@
-var newTone = function (name, hue) {
-  var color = d3.hcl(hue, 67, 75);
-  var tone = {
+var newColor = function (name, hue, chroma, luma) {
+  var d3color = d3.hcl(hue, chroma, luma);
+  var color = {
     'name': name,
-    'color': color,
-    'rgb': color.rgb()
-  }
-  return tone;
+    'color': d3color,
+    'rgb': d3color.rgb()
+  };
+  return color;
+}
+
+var newTone = function (name, hue) {
+  return newColor(name, hue, 67, 75);
 }
 
 tones = [
@@ -18,7 +22,6 @@ tones = [
   newTone('violet',  51 + 270 - 15),       //
   newTone('magenta', 276 + 60 - 15),  // complement triad
 ];
-
 
 
 var r = 50;
@@ -59,6 +62,7 @@ var toneTableRows = toneTable.selectAll("tr")
 
 toneTableRows.enter().append("tr")
   .append("th")
-  .text(function(d) { return colorHeader(d); });
+  .text(function(d) { return colorHeader(d); })
+  .style('background-color', function(d) {return d.rgb;});
 
 toneTableRows.exit().remove();
