@@ -3,7 +3,8 @@ var newColor = function (name, hue, chroma, luma) {
   var color = {
     'name': name,
     'color': d3color,
-    'rgb': d3color.rgb()
+    'rgb': d3color.rgb(),
+    'hue': hue
   };
   return color;
 }
@@ -14,18 +15,18 @@ var newTone = function (name, hue) {
 }
 
 tones = [
-  newTone('red',     276 + 120 - 15), // triad
-  newTone('orange',  51),             // locked BASE
-  newTone('yellow',  276 - 180),      // locked complementary
-  newTone('green',   276 - 120 - 15), // triad
-  newTone('cyan',    276 - 60 - 15),  // complement triad
-  newTone('blue',    276),            // locked BASE
-  newTone('violet',  51 + 270 - 15),       //
-  newTone('magenta', 276 + 60 - 15),  // complement triad
+  newTone('huh',     276 - 45),       // LIES… THESE WERE ALL LIES
+  newTone('blue',    276),            // LIES… THESE WERE ALL LIES
+  newTone('violet',  276 + 45),       // LIES… THESE WERE ALL LIES
+  newTone('red',     276 + 90),       // LIES… THESE WERE ALL LIES
+  newTone('orange',  51),             // LIES… THESE WERE ALL LIES
+  newTone('yellow',  276 - 180),      // LIES… THESE WERE ALL LIES
+  newTone('green',   276 - 180 + 45), // LIES… THESE WERE ALL LIES
+  newTone('cyan',    276 - 180 + 90), // LIES… THESE WERE ALL LIES
 ];
 
 
-// var scale = 
+// var scale =
 
 var newShade = function (name, increment) {
   var hue = 276;
@@ -41,9 +42,11 @@ shades = [
 var r = 50;
 var theta = 2 * Math.PI / tones.length;
 function cx(d, i) {
+  return(r * Math.cos(d.hue*2*Math.PI/360) + 100);
   return(r * Math.cos(i * theta) + 100);
 }
 function cy(d, i) {
+  return(r * Math.sin(d.hue*2*Math.PI/360) + 100);
   return(r * Math.sin(i * theta) + 100);
 }
 
