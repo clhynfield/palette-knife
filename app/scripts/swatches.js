@@ -8,6 +8,7 @@ var newColor = function (name, hue, chroma, luma) {
   return color;
 }
 
+
 var newTone = function (name, hue) {
   return newColor(name, hue, 67, 75);
 }
@@ -21,6 +22,19 @@ tones = [
   newTone('blue',    276),            // locked BASE
   newTone('violet',  51 + 270 - 15),       //
   newTone('magenta', 276 + 60 - 15),  // complement triad
+];
+
+
+// var scale = 
+
+var newShade = function (name, increment) {
+  var hue = 276;
+  var luma = increment;
+  return newColor(hue, 67, luma);
+}
+
+shades = [
+  newShade(15),
 ];
 
 
