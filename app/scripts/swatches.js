@@ -11,18 +11,21 @@ var newColor = function (name, hue, chroma, luma) {
 
 
 var newTone = function (name, hue) {
-  return newColor(name, hue, 67, 75);
+  return newColor(name, hue, 95, 67);
 }
 
+var blue = 276;
+var orange = 51;
+
 tones = [
-  newTone('huh',     276 - 45),       // LIES… THESE WERE ALL LIES
-  newTone('blue',    276),            // LIES… THESE WERE ALL LIES
-  newTone('violet',  276 + 45),       // LIES… THESE WERE ALL LIES
-  newTone('red',     276 + 90),       // LIES… THESE WERE ALL LIES
-  newTone('orange',  51),             // LIES… THESE WERE ALL LIES
-  newTone('yellow',  276 - 180),      // LIES… THESE WERE ALL LIES
-  newTone('green',   276 - 180 + 45), // LIES… THESE WERE ALL LIES
-  newTone('cyan',    276 - 180 + 90), // LIES… THESE WERE ALL LIES
+  newTone('blue',    blue),
+  newTone('violet',  blue + 30),
+  newTone('magenta', blue + 60),
+  newTone('red',     blue + 90),
+  newTone('orange',  orange),
+  newTone('yellow',  blue + 180),
+  newTone('green',   blue + 180 + 45),
+  newTone('cyan',    blue + 180 + 90),
 ];
 
 
