@@ -39,20 +39,20 @@ shades = [
 ];
 
 
-var r = 50;
+var r = 100;
 var theta = 2 * Math.PI / tones.length;
 function cx(d, i) {
-  return(r * Math.cos(d.hue*2*Math.PI/360) + 100);
-  return(r * Math.cos(i * theta) + 100);
+  return(r * Math.cos(d.hue*2*Math.PI/360) + 128);
+  return(r * Math.cos(i * theta) + 128);
 }
 function cy(d, i) {
-  return(r * Math.sin(d.hue*2*Math.PI/360) + 100);
-  return(r * Math.sin(i * theta) + 100);
+  return(r * Math.sin(d.hue*2*Math.PI/360) + 128);
+  return(r * Math.sin(i * theta) + 128);
 }
 
 var swatchContainer = d3.select("main").append("svg")
-  .attr("width", 200)
-  .attr("height", 200);
+  .attr("width", 256)
+  .attr("height", 256);
 
 var toneSwatches = swatchContainer.selectAll("circle")
   .data(tones);
@@ -61,7 +61,7 @@ toneSwatches.enter().append("circle")
   .attr('cx', function(d, i) {return cx(d, i);})
   .attr('cy', function(d, i) {return cy(d, i);})
   .style('fill', function(d, i) { return d.rgb; })
-  .attr('r', 12);
+  .attr('r', 24);
 
 toneSwatches.exit().remove();
 
