@@ -76,7 +76,7 @@ function chromaToHex(color) {
 function drawColors() {
         Object.keys(h).map(function (color, index) {
             var cell = document.getElementById("cell-" + color);
-            cell.innerHTML += ": <br />\n" + chromaToString(chroma.lch(L.medium, c.low, h[color]));
+            cell.innerHTML += ": <br />\n" + chromaToString(chroma.lch(L.medium, c.high, h[color]));
             cell.style.background = chroma.lch(L.medium, c.high, h[color]).hex();
             cell.style.color = black;
         });
