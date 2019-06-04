@@ -59,17 +59,25 @@ function toInt(num) {
 }
 
 function chromaToString(color) {
+    return chromaToHex(color);
+}
+
+function chromaToHSV(color) {
     return "" 
         + Math.round(color.hsv()[0]) 
         + ", " + Math.round(color.hsv()[1]*100)
         + ", " + Math.round(color.hsv()[2]*100);
 }
 
+function chromaToHex(color) {
+    return color.hex();
+}
+
 function drawColors() {
         Object.keys(h).map(function (color, index) {
             var cell = document.getElementById("cell-" + color);
             cell.innerHTML += ": <br />\n" + chromaToString(chroma.lch(L.medium, c.low, h[color]));
-            cell.style.background = chroma.lch(L.medium, c.low, h[color]).hex();
+            cell.style.background = chroma.lch(L.medium, c.high, h[color]).hex();
             cell.style.color = black;
         });
 }
